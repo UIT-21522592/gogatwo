@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
 
-    <title>Foodies Bistro & Garden</title>
+    <title>GOGATWO</title>
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
 </head>
 
 
@@ -39,7 +40,7 @@ $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'], "/") + 
     <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
     <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
 
-      <span class="ms-1 font-weight-bold text-white">Foodies Bistro & Garden</span>
+      <span class="ms-1 font-weight-bold text-white">GOGATWO</span>
 
     </a>
   </div>

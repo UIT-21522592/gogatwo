@@ -19,7 +19,7 @@ include('authenticate.php');
                     ?>
                             <div class="row mb-4">
                                 <div class="col-md-4">
-                                    <img src="uploads/<?= $citem['image'] ?>" alt="Product Image" class="img-fluid rounded">
+                                    <img src="uploads/product/<?= $citem['image'] ?>" alt="Product Image" class="img-fluid rounded">
                                 </div>
                                 <div class="col-md-6">
                                     <h5 class="mb-2"><?= $citem['name'] ?></h5>

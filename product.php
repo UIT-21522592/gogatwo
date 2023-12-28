@@ -29,9 +29,17 @@ if (isset($_GET['category'])) {
                                         <a href="singleProductView.php?product=<?= $item['slug']; ?>">
                                             <div class="card shadow-lg mb-5 rounded border-0">
                                                 <div class="card-body p-0">
-                                                    <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
+                                                    <img src="uploads/product/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
+                                                    <div class="col-auto me-5 d-flex justify-content-center" style="display: flex; gap: 10px; padding:10px; display:center;">
+                                                <button class="btn btn-success px-4 addToCartBtn" value="<?= $item['id']; ?>">
+                                                    <i class="fa fa-shopping-cart me-2 "></i></button>
+                                            
+                                                <button class="btn btn-danger px-4 addToWishlistBtn" value="<?= $item['id']; ?>">
+                                                    <i class="fa fa-heart me-2"></i></button>
+                                            </div>
                                                     <h5 class="text-center mt-sm-3 mb-sm-3 fw-bolder" style="color: #8B4513;"><?= $item['name'];  ?></h5>
                                                 </div>
+                                               
                                             </div>
                                         </a>
                                     </div>

@@ -22,7 +22,7 @@ if (isset($_GET['order'])) {
                 </div>
                 <div class="d-flex" style="gap: 16px;">
                     <div style="width: 178px; height: 103px; border-radius: 15px; box-shadow: 3px 4px 20px 0px rgba(0, 0, 0, 0.25);">
-                        <img style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;" src="uploads/<?= $order['product_image']; ?>" alt="Product Image" class="w-100">
+                        <img style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;" src="uploads/product/<?= $order['product_image']; ?>" alt="Product Image" class="w-100">
                     </div>
                     <div class="text-truncate" style="max-width: 150px;"><?= $order['product_name']; ?></div>
                     <div>

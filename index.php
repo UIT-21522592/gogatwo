@@ -19,7 +19,7 @@ include('./includes/slider.php'); ?>
                         <a href="singleProductView.php?product=<?= $item['slug']; ?>">
                             <div class="card shadow">
                                 <div class="card-body" style="height: 470px">
-                                    <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
+                                    <img src="uploads/product/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
                                     <h5 class="text-center mt-sm-3 mb-sm-3 fw-bolder" style="color: #8B4513;"><?= $item['name'];  ?></h5>
                                 </div>
                             </div>

@@ -106,7 +106,7 @@ $hcm_districts = array(
                             <div class="mb-1 border">
                                 <div class="row align-items-center">
                                     <div class="col-md-2">
-                                        <img src="uploads/<?= $citem['image'] ?>" alt="Image" width="65px" height="90px">
+                                        <img src="uploads/product/<?= $citem['image'] ?>" alt="Image" width="65px" height="90px">
                                     </div>
                                     <div class="col-md-5">
                                         <label><?= $citem['name'] ?></label>

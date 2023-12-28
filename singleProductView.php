@@ -15,7 +15,7 @@ if (isset($_GET['product'])) {
                 <div class="row">
                     <div class="col-md-4">
                         <div class="shadow">
-                            <img src="uploads/<?= $product['image']; ?>" alt="Product Image" class="w-100">
+                            <img src="uploads/product/<?= $product['image']; ?>" alt="Product Image" class="w-100">
                         </div>
                     </div>
                     <div class="col-md-8">

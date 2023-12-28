@@ -16,14 +16,14 @@ include('./includes/header.php');
     }
 
     .bg-masterchef {
-        background: url(./assets/img/masterchef.svg);
+        background: url(./assets/img/masterchef.jpg);
         background-size: cover;
         color: white;
         text-align: center;
     }
 
     .bg-standard {
-        background: url(./assets/img/standard.png);
+        background: url(./assets/img/standard.jpg);
         background-size: cover;
         color: white;
         text-align: center;
@@ -104,7 +104,7 @@ include('./includes/header.php');
                 </div>
             </div>
             <div class="col-md-3">
-                <img src="./assets/img/testimalnial.png" alt="testimalnial">
+                <img src="./assets/img/testimalnial.jpg" alt="testimalnial">
             </div>
         </div>
     </div>
@@ -152,7 +152,7 @@ include('./includes/header.php');
         </div>
         <div class="col-md-7">
             <div class="section-content">
-                <img src="./assets/img/mission.svg" alt="mission">
+                <img src="./assets/img/mission.jpg" alt="mission">
             </div>
         </div>
     </div>

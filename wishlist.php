@@ -16,7 +16,7 @@ include('authenticate.php');
                 ?>
                 <div class="col mb-4">
                     <div class="card h-100 border border-light shadow">
-                        <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="card-img-top">
+                        <img src="uploads/product/<?= $item['image']; ?>" alt="Product Image" class="card-img-top">
                         <div class="card-body text-dark">
                             <h5 class="card-title fs-5"><a href="singleProductView.php?product=<?= $item['name']; ?>" class="text-decoration-none text-dark"><?= $item['name']; ?></a></h5>
                             <div class="d-flex justify-content-between align-items-center mt-3">

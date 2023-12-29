@@ -20,7 +20,7 @@ include('authenticate.php');
                         <div class="card-body text-dark">
                             <h5 class="card-title fs-5"><a href="singleProductView.php?product=<?= $item['name']; ?>" class="text-decoration-none text-dark"><?= $item['name']; ?></a></h5>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <button class="btn btn-danger toggleWishlistBtn"><i class="fa fa-trash me-2"></i>Remove</button>
+                                <button class="btn btn-danger toggleWishlistBtn" value="<?= $item['wid']; ?>><i class="fa fa-trash me-2"></i>Remove</button>
                             </div>
                             
                         </div>

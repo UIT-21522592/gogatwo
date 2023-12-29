@@ -107,80 +107,14 @@
               ?>
             </ul>
         <button
-          class="btn btn-secondary dropdown-toggle"
+          class="navbar-toggler"
           type="button"
-          id="dropdownMenuButton"
-          
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
           aria-controls="offcanvasNavbar"
           aria-label="Toggle navigation"
-          data-toggle="dropdown" 
-          aria-haspopup="true" 
-          aria-expanded="false"
         >
-          <i class="fas fa-circle-user fa-lg"></i>
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <style>
-                .dropdown-content {
-              display: none;
-              position: absolute;
-              background-color: #f9f9f9;
-              min-width: 160px;
-              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-              z-index: 1;
-            }
-
-            .dropdown-content a {
-              color: black;
-              padding: 12px 16px;
-              text-decoration: none;
-              display: block;
-              text-align: left;
-            }
-
-            .dropdown-content a:hover {background-color: #f1f1f1;}
-
-            .dropdown:hover .dropdown-content {
-              display: block;
-            }
-          </style>
-
-          <div class="dropdown-content" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">My Profile</a>
-            <a class="dropdown-item" href="#">My Orders</a>
-            <a class="dropdown-item" href="#">Log out</a>
-          </div>
-        </div> -->
-        <ul class="navbar-nav ms-auto">
-              <?php
-              if (isset($_SESSION['auth'])) {
-              ?>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <?= $_SESSION['auth_user']['name'];   ?>
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="myOrder.php">My Orders</a></li>
-                    <li><a class="dropdown-item" href="myProfile.php">My Profile</a></li>
-                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
-                  </ul>
-                </li>
-              <?php
-              } else {
-              ?>
-                <li class="nav-item">
-                  <a class="nav-link" href="register.php">Register</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="login.php">Login</a>
-                </li>
-              <?php
-              }
-              ?>
-            </ul>
-
-        <!-- <a href="login.php" class="login-button" style="color: #141415">
-          
-        </a> -->
-        
       </div>
     </nav>

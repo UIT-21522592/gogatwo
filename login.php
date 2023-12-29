@@ -7,7 +7,7 @@ if (isset($_SESSION['auth'])) {
 }
 include('./includes/header.php') ?>
 <div style="padding: 180px; padding-top: 5px; position: relative; background-color: rgba(255, 255, 255, 0.75);">
-    <img src="uploads/wp10509681.jpg" alt="Background Image" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -1;">
+    <!-- <img src="uploads/wp10509681.jpg" alt="Background Image" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -1;"> -->
 <div class="py-5">
     <div class="container">
         <div class="row justify-content-center">

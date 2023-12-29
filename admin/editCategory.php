@@ -1,6 +1,7 @@
 <?php
+include("../functions/myFunctions.php");
 include('../middleware/adminMiddleware.php');
-include('./includes/header.php');
+include("navbar.php");
 ?>
 
 <div class="container mt-4">
@@ -27,7 +28,7 @@ include('./includes/header.php');
                                         <input type="text" name="name" value="<?= $data['name'] ?>" placeholder="Enter Category Name" class="form-control">
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="slug">Slug</label>
+                                        <label for="slug" class="form-label">Slug</label>
                                         <input type="text" name="slug" value="<?= $data['slug'] ?>" placeholder="Enter Slug" class="form-control">
                                     </div>
                                     <div class="col-md-12 mb-3">
@@ -40,10 +41,10 @@ include('./includes/header.php');
                                         <div class="mt-2">
                                             <label for="old_image" class="form-label">Current Image</label>
                                             <input type="hidden" name="old_image" value="<?= $data['image'] ?>">
-                                            <img src="../uploads/<?= $data['image'] ?>" height="200px" width="150px" alt="">
+                                            <img src="../uploads/categories/<?= $data['image'] ?>" height="200px" width="150px" alt="">
                                         </div>
                                     </div>
-                                    <div class="col-md-12 mb-3">
+                                    <!-- <div class="col-md-12 mb-3">
                                         <label for="meta_title">Meta Title</label>
                                         <input type="text" name="meta_title" value="<?= $data['meta_title'] ?>" placeholder="Enter Meta Title" class="form-control">
                                     </div>
@@ -54,7 +55,7 @@ include('./includes/header.php');
                                     <div class="col-md-12 mb-3">
                                         <label for="meta_keywords">Meta Keywords</label>
                                         <textarea rows="3" name="meta_keywords" placeholder="Enter Meta Keywords" class="form-control"><?= $data['meta_keywords'] ?></textarea>
-                                    </div>
+                                    </div> -->
                                     <div class="col-md-6 mb-3">
                                         <div class="form-check">
                                             <input type="checkbox" <?= $data['status'] ? "checked" : "" ?> name="status" id="statusCheckbox">
@@ -86,6 +87,4 @@ include('./includes/header.php');
     </div>
 </div>
 
-<?php
-include('./includes/footer.php');
-?>
+

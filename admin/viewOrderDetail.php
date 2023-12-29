@@ -1,6 +1,8 @@
 <?php
+include("../functions/myFunctions.php");
 include('../middleware/adminMiddleware.php');
-include('./includes/header.php');
+//include_once("../includes/header.php");
+include("navbar.php");
 if (isset($_GET['t'])) {
     $tracking_no = $_GET['t'];
     $orderData = checkTrackingNoExist($tracking_no);
@@ -18,7 +20,7 @@ if (isset($_GET['t'])) {
 }
 $data = mysqli_fetch_array($orderData);
 ?>
-
+<div class="main">
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -135,6 +137,14 @@ $data = mysqli_fetch_array($orderData);
             </div>
         </div>
     </div>
+    <footer class = "footer">
+        <?php
+            include("../includes/footer.php")
+        ?>
+
+    </footer>
+</div>
+
 </div>
 
 
@@ -142,4 +152,4 @@ $data = mysqli_fetch_array($orderData);
 
 
 
-<?php include('./includes/footer.php') ?>
+

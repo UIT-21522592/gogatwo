@@ -48,7 +48,8 @@ $(document).ready(function () {
           alertify.success("Login to continue");
         } else if (response == 500) {
           alertify.success("Something went wrong");
-        } else if (response == 403) {
+        } else if (response == 403)
+        {
           alertify.success("Admins are not allowed to perform this action");
         }
       },
@@ -117,7 +118,8 @@ $(document).on("click", ".addToWishlistBtn", function (e) {
         alertify.success("Login to continue");
       } else if (response == 500) {
         alertify.success("Something went wrong");
-      } else if (response == 403) {
+      } else if (response == 403)
+      {
         alertify.success("Admins are not allowed to perform this action");
       }
     },
@@ -145,3 +147,32 @@ $(document).on("click", ".toggleWishlistBtn", function (e) {
     },
   });
 });
+// $(document).ready(function(){
+//       $('.delete_category_btn').click(function(e) {
+//           e.preventDefault();
+//           var id = $(this).val();
+//               Swal.fire({
+//                 icon: "error",
+//                 title: "You are about to delete this category",
+//                 text: "Once deleted, you can not retrieve this category",
+//                 icon: "warning",
+//                 //showConfirmButton: true,
+//                 showDenyButton: true,
+//                 showCancelButton: true,
+                
+//                 confirmButtonText: "OK",
+//                 denyButtonText: `Don't OK`
+                
+//               }).then((SweetAlertResult) => {
+//                 /* Read more about isConfirmed, isDenied below */
+//                 if (SweetAlertResult.isConfirmed) {
+//                     Swal.fire('Delete!', '', 'success')
+ 
+//                 } else if (SweetAlertResult.isDenied) {
+//                       Swal("Your category is saved, for NOW!");
+//                 }
+//               });
+
+              
+//       });
+// });

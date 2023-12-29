@@ -1,10 +1,24 @@
 <?php
 include('../middleware/adminMiddleware.php');
-include('./includes/header.php');
+//include_once("../includes/header.php");
+include("navbar.php");
+$host="localhost";
+$username="root";
+$password="";
+$database="database";
+//create db connection
+$conn=mysqli_connect($host, $username, $password, $database);
+// check db connection
+// if(!$conn){
+//     die("Connection failed: ". mysqli_connect_errno());
+// }else{
+//     echo "Connected succesflly";
+// }
 function getCustomers()
 {
     global $conn;
-    $query = "SELECT id, name, phone, email FROM users WHERE role_as = 0";
+    //$query = "SELECT id, name, phone, email FROM `users` WHERE role_as = 0";
+    $query = "SELECT id, name, phone, email FROM `users`";
     $result = mysqli_query($conn, $query);
     return $result;
 }
@@ -58,7 +72,7 @@ function getMessages()
         margin-top: 15px; 
     }
 </style>
-
+<div class="main">
 <div class="container">
     <div class="row ">
         <div class="col-md-12">
@@ -262,6 +276,6 @@ function getMessages()
             </div>
         </div>
     </div>
-    <?php
-    include('./includes/footer.php');
-    ?>
+
+</div>
+

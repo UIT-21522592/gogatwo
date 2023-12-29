@@ -15,7 +15,7 @@ include('./includes/header.php');
         text-align: center;
     }
 
-    .bg-masterchef {
+    .bg-about {
         background: url(./assets/img/about1.jpg);
         background-size: cover;
         color: white;
@@ -72,7 +72,7 @@ include('./includes/header.php');
     </div>
 </div>
 
-<div class="p-5 bg-masterchef">
+<div class="p-5 bg-about">
     <div class="container">
         <div class="section-title">Meet the Creators</div>
         <div class="section-content">

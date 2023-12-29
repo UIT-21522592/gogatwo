@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top fw-bold">
       <div class="container-fluid">
-        <a class="navbar-brand me-auto" href="index.php">GOGATWO</a>
+        <a class="navbar-brand me-auto" style="padding-left:30px;" href="index.php">GOGATWO</a>
         <div
           class="offcanvas offcanvas-end"
           tabindex="-1"
@@ -68,17 +68,44 @@
                 </a>
               </li>
               <li class="nav-item" style="align-items: center; display: flex">
-                <a class="nav-link mx-lg-2" href="">
-                  <button class="btn" style="color: #161717" title="Search">
-                    <i class="fas fa-magnifying-glass fa-lg"></i>
-                  </button>
+                    <form id="searchForm" action="product.php?" method="GET" class="d-flex justify-content-between">
+                      <input class="form-control" type="text" id="search" name="key" placeholder="Search for" aria-label="Search" style="width: 85%">
+                      <button class="btn" type="submit" title="Search" style="background-color: white;">
+                      <i class="fas fa-magnifying-glass fa-lg nav-link mx-lg-2"></i>
+                      </button>
+                  </form>
                 </a>
               </li>
             </ul>
           </div>
         </div>
-
-        <!-- <div class="dropdown">
+        <ul class="navbar-nav ms-auto">
+              <?php
+              if (isset($_SESSION['auth'])) {
+              ?>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <?= $_SESSION['auth_user']['name'];   ?>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="myOrder.php">My Orders</a></li>
+                    <li><a class="dropdown-item" href="myProfile.php">My Profile</a></li>
+                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                  </ul>
+                </li>
+              <?php
+              } else {
+              ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="register.php">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.php">Login</a>
+                </li>
+              <?php
+              }
+              ?>
+            </ul>
         <button
           class="btn btn-secondary dropdown-toggle"
           type="button"

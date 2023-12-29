@@ -4,9 +4,9 @@ body {
   }
   .navbar {
     background-color: #fff;
-    height: 80px;
+    height: fit-content;
     border-radius: 30px;
-    overflow: hidden;
+    overflow: visible;
   }
   
   .nav-brand {

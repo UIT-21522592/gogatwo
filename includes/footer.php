@@ -70,13 +70,10 @@
       </div>
       <!-- Grid container -->
     </footer>
-    <!-- Make pop up window -->
-
-<script src="../assets/js/jquery-3.7.1.min.js"></script>
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="../assets/js/custom.js"></script>
-<script src="../assets/js/owl.carousel.min.js"></script>
+<script src="./assets/js/jquery-3.7.1.min.js"></script>
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/custom.js"></script>
+<script src="./assets/js/owl.carousel.min.js"></script>
 <!-- alertify js -->
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <script>

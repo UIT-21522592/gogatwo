@@ -16,7 +16,7 @@ include('./includes/header.php');
     }
 
     .bg-masterchef {
-        background: url(./assets/img/masterchef.jpg);
+        background: url(./assets/img/about1.jpg);
         background-size: cover;
         color: white;
         text-align: center;
@@ -104,7 +104,7 @@ include('./includes/header.php');
                 </div>
             </div>
             <div class="col-md-3">
-                <img src="./assets/img/testimalnial.jpg" alt="testimalnial">
+                <img src="./assets/img/about2.jpg" alt="testimalnial">
             </div>
         </div>
     </div>

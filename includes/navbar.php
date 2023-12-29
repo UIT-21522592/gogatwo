@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top fw-bold">
       <div class="container-fluid">
-        <a class="navbar-brand me-auto" style="padding-left:30px;" href="index.php">GOGATWO</a>
+        <a class="navbar-brand me-auto" href="index.php">GOGATWO</a>
         <div
           class="offcanvas offcanvas-end"
           tabindex="-1"
@@ -68,17 +68,61 @@
                 </a>
               </li>
               <li class="nav-item" style="align-items: center; display: flex">
-                    <form id="searchForm" action="product.php?" method="GET" class="d-flex justify-content-between">
-                      <input class="form-control" type="text" id="search" name="key" placeholder="Search for" aria-label="Search" style="width: 85%">
-                      <button class="btn" type="submit" title="Search" style="background-color: white;">
-                      <i class="fas fa-magnifying-glass fa-lg nav-link mx-lg-2"></i>
-                      </button>
-                  </form>
+                <a class="nav-link mx-lg-2" href="">
+                  <button class="btn" style="color: #161717" title="Search">
+                    <i class="fas fa-magnifying-glass fa-lg"></i>
+                  </button>
                 </a>
               </li>
             </ul>
           </div>
         </div>
+
+        <!-- <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+          data-toggle="dropdown" 
+          aria-haspopup="true" 
+          aria-expanded="false"
+        >
+          <i class="fas fa-circle-user fa-lg"></i>
+        </button>
+        <style>
+                .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f9f9f9;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+            }
+
+            .dropdown-content a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+              text-align: left;
+            }
+
+            .dropdown-content a:hover {background-color: #f1f1f1;}
+
+            .dropdown:hover .dropdown-content {
+              display: block;
+            }
+          </style>
+
+          <div class="dropdown-content" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">My Profile</a>
+            <a class="dropdown-item" href="#">My Orders</a>
+            <a class="dropdown-item" href="#">Log out</a>
+          </div>
+        </div> -->
         <ul class="navbar-nav ms-auto">
               <?php
               if (isset($_SESSION['auth'])) {
@@ -106,15 +150,10 @@
               }
               ?>
             </ul>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+
+        <!-- <a href="login.php" class="login-button" style="color: #141415">
+          
+        </a> -->
+        
       </div>
     </nav>

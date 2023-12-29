@@ -137,8 +137,8 @@ if (isset($_SESSION['auth'])) {
         $orderInfo = "Thanh toán qua mã QR Momo";
         $amount = $_POST['totalPrice'];
         $orderId = time() . "";
-        $redirectUrl = "http://localhost:8080/Foodies/checkout.php";
-        $ipnUrl = "http://localhost:8080/Foodies/checkout.php";
+        $redirectUrl = "http://localhost:8080/WorkspaceWeb/checkout.php";
+        $ipnUrl = "http://localhost:8080/WorkspaceWeb/checkout.php";
         $extraData = "";
 
         $requestId = time() . "";

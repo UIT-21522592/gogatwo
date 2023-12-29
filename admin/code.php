@@ -61,25 +61,36 @@ if (isset($_POST['add_category_btn'])) {
         redirect("editCategory.php?id=$category_id", "Something went wrong");
     }
 } else if (isset($_POST['delete_category_btn'])) {
-    $category_id = mysqli_real_escape_string($conn, $_POST['category_id']);
+    // $category_id = mysqli_real_escape_string($conn, $_POST['category_id']);
 
-    $category_query = "SELECT * FROM categories WHERE id='$category_id'";
-    $category_query_run = mysqli_query($conn, $category_query);
-    $category_data = mysqli_fetch_array($category_query_run);
-    $image = $category_data['image'];
+    // $category_query = "SELECT * FROM categories WHERE id='$category_id'";
+    // $category_query_run = mysqli_query($conn, $category_query);
+    // $category_data = mysqli_fetch_array($category_query_run);
+    // $image = $category_data['image'];
 
-    $delete_query = "DELETE FROM categories WHERE id='$category_id'";
-    $delete_query_run = mysqli_query($conn, $delete_query);
+    // $delete_query = "DELETE FROM `categories` WHERE `id`='$category_id'";
+    // $delete_query_run = mysqli_query($conn, $delete_query);
+    // get category id
+  $id = $_POST["category_id"];
+  
+  // delete query   
+  $sql = "DELETE FROM `categories` WHERE `id` = '".$id."' ";
+
+  // execute query
+  $conn->query($sql);
+
+  // redirect to categories page
+  //header('Location: categories.php');
 
     if ($delete_query_run) {
         if (file_exists("../uploads/" . $image)) {
             unlink("../uploads/" . $image);
         }
         echo 200;
-        // redirect("category.php?", "Category deleted successfully");
+        redirect("category.php?", "Category deleted successfully");
     } else {
         echo 500;
-        // redirect("category.php", "Something went wrong");
+        redirect("category.php", "Something went wrong");
     }
 } else if (isset($_POST['add_product_btn'])) {
     $category_id = $_POST['category_id'];

@@ -1,6 +1,8 @@
 <?php
+include("../functions/myFunctions.php");
 include('../middleware/adminMiddleware.php');
-include('./includes/header.php');
+//include_once("../includes/header.php");
+include("navbar.php");
 ?>
 
 <div class="container mt-4">

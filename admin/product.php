@@ -36,7 +36,7 @@ include("navbar.php");
                                                 <tr>
                                                     <td class="text-center"><?= $item['id']; ?></td>
                                                     <td class="text-center"><?= $item['name']; ?></td>
-                                                    <td class="text-center"><img src="../uploads/<?= $item['image']; ?>" width="50px" height="50px" alt="<?= $item['name']; ?>"></td>
+                                                    <td class="text-center"><img src="../uploads/product/<?= $item['image']; ?>" width="50px" height="50px" alt="<?= $item['name']; ?>"></td>
                                                     <td class="text-center"><?= $item['status'] == "0" ? "Visible" : "Hidden"; ?></td>
                                                     <td class="text-center">
                                                         <a href="editProduct.php?id=<?= $item['id']; ?>" class="btn btn-warning btn-sm">Edit</a>

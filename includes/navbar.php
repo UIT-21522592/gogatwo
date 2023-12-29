@@ -68,10 +68,12 @@
                 </a>
               </li>
               <li class="nav-item" style="align-items: center; display: flex">
-                <a class="nav-link mx-lg-2" href="">
-                  <button class="btn" style="color: #161717" title="Search">
-                    <i class="fas fa-magnifying-glass fa-lg"></i>
-                  </button>
+                    <form id="searchForm" action="product.php?" method="GET" class="d-flex justify-content-between">
+                      <input class="form-control" type="text" id="search" name="key" placeholder="Search for" aria-label="Search" style="width: 85%">
+                      <button class="btn" type="submit" title="Search" style="background-color: white;">
+                      <i class="fas fa-magnifying-glass fa-lg nav-link mx-lg-2"></i>
+                      </button>
+                  </form>
                 </a>
               </li>
             </ul>

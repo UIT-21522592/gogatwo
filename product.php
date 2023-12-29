@@ -37,6 +37,7 @@ if (isset($_GET['category'])) {
                                                 <button class="btn btn-danger px-4 addToWishlistBtn" value="<?= $item['id']; ?>">
                                                     <i class="fa fa-heart me-2"></i></button>
                                             </div>
+                                            
                                                     <h5 class="text-center mt-sm-3 mb-sm-3 fw-bolder" style="color: #8B4513;"><?= $item['name'];  ?></h5>
                                                 </div>
                                                

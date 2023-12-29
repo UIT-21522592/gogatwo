@@ -4,7 +4,7 @@ include('./includes/header.php');
 ?>
 
 <div style="padding: 5%; position: relative; background-color: rgba(255, 255, 255, 0.75);">
-    <img src="uploads/wp10509681.jpg" alt="Background Image" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -1;">
+    
 
     <div class="border border-5 p-3 p-md-5 rounded">
         <h2 class="display-4 fw-bold text-center" style="color: #957B3F;">Get In Touch</h2>

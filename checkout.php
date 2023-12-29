@@ -115,7 +115,7 @@ $hcm_districts = array(
                                         <label>x <?= $citem['product_qty']  ?></label>
                                     </div>
                                     <div class="col-md-3">
-                                        <label><?= $citem['selling_price'] ?>vnd</label>
+                                        <label><?= $citem['selling_price'] ?>$</label>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@ $hcm_districts = array(
                         }
                         ?>
                         <hr>
-                        <h5>Total Price: <span class="float-end mx-5 fw-bold"><?= $totalPrice ?>vnd</span></h5>
+                        <h5>Total Price: <span class="float-end mx-5 fw-bold"><?= $totalPrice ?>$</span></h5>
                         <div class="">
                             <input type="hidden" name="payment_mode" value="COD">
                             <button type="submit" name="placeOrderBtn" class="btn btn-success w-100">
@@ -173,7 +173,7 @@ $hcm_districts = array(
 </script>
 
 
-<?php include('./includes/footer.php') ?>
+
 <!-- Replace the "test" client-id value with your client-id -->
 <script src="https://www.paypal.com/sdk/js?client-id=AVz3lHrq_vQjrPadRGvrRswIvHAq2OuJ0qq-ynQS2Y-FjcvtrxrS9Z95HK2BHozkc6FZu0TGgDhlgvMm&currency=USD"></script>
 <script>

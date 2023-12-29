@@ -29,10 +29,10 @@ if (isset($_GET['product'])) {
                         </div>
                         <div class="row">
                             <div class="col-auto">
-                                <h3 class="mb-0"> <span class="text-success fw-bold"><?= $product['selling_price']; ?></span> VND</h3>
+                                <h3 class="mb-0"> <span class="text-success fw-bold"><?= $product['selling_price']; ?></span> $</h3>
                             </div>
                             <div class="col-auto align-items-center d-flex">
-                                <h5 class="mb-0" style="height: fit-content";><s class="text-danger"><?= $product['original_price']; ?></s> VND</h5>
+                                <h5 class="mb-0" style="height: fit-content";><s class="text-danger"><?= $product['original_price']; ?></s> $</h5>
                             </div>
                         </div>
                         <div class="row mt-4">

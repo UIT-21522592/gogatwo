@@ -31,7 +31,7 @@ include('authenticate.php');
                                     </div>
                                 </div>
                                 <div class="col-md-2 text-end">
-                                    <h5 class="mb-2"><?= $citem['selling_price'] ?>vnd</h5>
+                                    <h5 class="mb-2"><?= $citem['selling_price'] ?>$</h5>
                                     <button class="btn btn-danger btn-sm deleteItem" value="<?= $citem['cid'] ?>">
                                         <i class="fa fa-trash me-2"></i>Remove
                                     </button>

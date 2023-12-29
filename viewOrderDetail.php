@@ -114,7 +114,7 @@ $data = mysqli_fetch_array($orderData);
                                                             <?= $item['order_items_qty']; ?>
                                                         </td>
                                                         <td class="align-middle">
-                                                            <?= $item['price']; ?> vnd
+                                                            <?= $item['price']; ?> $
                                                         </td>
                                                     </tr>
                                             <?php
@@ -128,7 +128,7 @@ $data = mysqli_fetch_array($orderData);
                                     </table>
 
                                     <hr>
-                                    <h5>Total Price: <span class="float-end fw-bold me-4"><?= $data['total_price']; ?> vnd</span></h5>
+                                    <h5>Total Price: <span class="float-end fw-bold me-4"><?= $data['total_price']; ?> $</span></h5>
 
                                     <label class="fw-bold">Payment Mode</label>
                                     <div class="border p-1 mb-3">

@@ -71,12 +71,7 @@ include("navbar.php");
             </div>
         </div>
     </div>
-    <footer class = "footer">
-        <?php
-            include("../includes/footer.php")
-        ?>
-
-    </footer>
+    
 </div>
 
 </div>

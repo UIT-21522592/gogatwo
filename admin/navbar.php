@@ -111,16 +111,16 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="charts-chartjs.html">
+						<a class="sidebar-link" href="../userprofile.php">
               <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">User</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
+					<!-- <li class="sidebar-item">
 						<a class="sidebar-link" href="maps-google.html">
               <i class="align-middle" data-feather="map"></i> <span class="align-middle">Add User</span>
             </a>
-					</li>
+					</li> -->
 				</ul>
 
 				

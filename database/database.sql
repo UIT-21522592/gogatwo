@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Dec 29, 2023 at 08:05 AM
--- Server version: 8.2.0
--- PHP Version: 8.2.13
+-- Máy chủ: 127.0.0.1:3306
+-- Thời gian đã tạo: Th1 25, 2024 lúc 08:48 PM
+-- Phiên bản máy phục vụ: 8.0.31
+-- Phiên bản PHP: 8.1.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `database`
+-- Cơ sở dữ liệu: `database`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `carts`
+-- Cấu trúc bảng cho bảng `carts`
 --
 
 DROP TABLE IF EXISTS `carts`;
@@ -42,24 +42,24 @@ CREATE TABLE IF NOT EXISTS `carts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Cấu trúc bảng cho bảng `categories`
 --
 
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `slug` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `slug` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `description` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `status` tinyint NOT NULL DEFAULT '0',
   `popular` tinyint NOT NULL DEFAULT '0',
-  `image` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `categories`
+-- Đang đổ dữ liệu cho bảng `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `description`, `status`, `popular`, `image`, `created_at`) VALUES
@@ -70,39 +70,39 @@ INSERT INTO `categories` (`id`, `name`, `slug`, `description`, `status`, `popula
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
+-- Cấu trúc bảng cho bảng `messages`
 --
 
 DROP TABLE IF EXISTS `messages`;
 CREATE TABLE IF NOT EXISTS `messages` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(191) NOT NULL,
-  `last_name` varchar(191) NOT NULL,
-  `email` varchar(191) NOT NULL,
-  `msg` varchar(500) NOT NULL,
+  `first_name` varchar(10) NOT NULL,
+  `last_name` varchar(10) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `msg` varchar(300) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Cấu trúc bảng cho bảng `orders`
 --
 
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `tracking_no` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `tracking_no` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `user_id` int NOT NULL,
-  `name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `phone` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `phone` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `address` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `total_price` int NOT NULL,
-  `payment_mode` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `payment_id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `payment_mode` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `payment_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `status` tinyint NOT NULL DEFAULT '0',
-  `comments` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `comments` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
 ) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `orders`
+-- Đang đổ dữ liệu cho bảng `orders`
 --
 
 INSERT INTO `orders` (`id`, `tracking_no`, `user_id`, `name`, `email`, `phone`, `address`, `total_price`, `payment_mode`, `payment_id`, `status`, `comments`, `created_at`) VALUES
@@ -119,7 +119,7 @@ INSERT INTO `orders` (`id`, `tracking_no`, `user_id`, `name`, `email`, `phone`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_items`
+-- Cấu trúc bảng cho bảng `order_items`
 --
 
 DROP TABLE IF EXISTS `order_items`;
@@ -138,20 +138,20 @@ CREATE TABLE IF NOT EXISTS `order_items` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int NOT NULL AUTO_INCREMENT,
   `category_id` int NOT NULL,
-  `name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `slug` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `product_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `slug` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `small_description` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `description` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `original_price` int NOT NULL,
-  `selling_price` int NOT NULL,
-  `image` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `original_price` varchar(8) COLLATE utf8mb4_general_ci NOT NULL,
+  `selling_price` varchar(8) COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `qty` int NOT NULL,
   `status` tinyint NOT NULL,
   `trending` tinyint NOT NULL,
@@ -161,35 +161,35 @@ CREATE TABLE IF NOT EXISTS `products` (
 ) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `products`
+-- Đang đổ dữ liệu cho bảng `products`
 --
 
-INSERT INTO `products` (`id`, `category_id`, `name`, `slug`, `small_description`, `description`, `original_price`, `selling_price`, `image`, `qty`, `status`, `trending`, `created_at`) VALUES
-(1, 1, 'God of War', 'god-of-war', 'Epic journey as a legendary warrior.', 'Embark on an epic journey as a legendary warrior battling mythical creatures.', 60, 50, 'god-of-war.jpg', 100, 0, 1, '2023-12-28 11:36:00'),
-(2, 1, 'Marvel\'s Spider-Man', 'marvels-spider-man', 'Stealthy assassin in the shadows', 'Become a stealthy assassin and navigate through the shadows to complete deadly missions.', 50, 40, 'marvels-spider-man.jpg', 150, 0, 1, '2023-12-28 11:37:36'),
-(3, 1, 'Resident Evil Village', 'resident-evil-village', 'Procedurally generated world.', 'Explore a procedurally generated world, battling monsters and unlocking new abilities.', 40, 30, 'resident-evil-village.jpg', 120, 0, 1, '2023-12-28 11:39:40'),
-(4, 2, 'Horizon Zero Dawn', 'horizon-zero-dawn', 'Thrilling adventure to uncover mysteries.', 'Embark on a thrilling adventure to uncover the mysteries of a lost civilization.', 65, 55, 'horizon-zero-dawn.jpg', 90, 0, 1, '2023-12-28 11:43:30'),
-(5, 2, 'Ghost of Tsushima', 'ghost-of-tsushima', 'Journey through magical realms.', 'Journey through magical realms and solve puzzles to restore balance to the world.', 60, 50, 'ghost-of-tsushima.jpg', 110, 0, 1, '2023-12-28 11:46:32'),
-(6, 2, 'Days Gone', 'days-gone', 'Search for hidden treasures.', 'Search for hidden treasures in exotic locations, but beware of traps and enemies.', 50, 40, 'days-gone.jpg', 130, 0, 1, '2023-12-28 11:47:34'),
-(7, 3, 'FIFA 22', 'fifa-22', 'The latest installment in the FIFA series.', 'Experience the excitement of football with realistic gameplay in FIFA 22.', 70, 60, 'fifa-22.jpg', 80, 0, 1, '2023-12-28 11:57:17'),
-(8, 3, 'NBA 2K22', 'nba-2k22', 'The premier basketball simulation game.', 'Play the most realistic basketball game with NBA 2K22.', 60, 50, 'nba-2k22.jpg', 120, 0, 1, '2023-12-28 11:58:11'),
-(9, 3, 'Gran Turismo Sport', 'gran-turismo-sport', 'A stunning racing experience.', 'Immerse yourself in the world of realistic racing with Gran Turismo Sport.', 60, 50, 'gran-turismo-sport.jpg', 120, 0, 1, '2023-12-28 12:00:36');
+INSERT INTO `products` (`id`, `category_id`, `product_name`, `slug`, `small_description`, `description`, `original_price`, `selling_price`, `image`, `qty`, `status`, `trending`, `created_at`) VALUES
+(1, 1, 'God of War', 'god-of-war', 'Epic journey as a legendary warrior.', 'Embark on an epic journey as a legendary warrior battling mythical creatures.', '60', '50', 'god-of-war.jpg', 100, 0, 1, '2023-12-28 04:36:00'),
+(2, 1, 'Marvel\'s Spider-Man', 'marvels-spider-man', 'Stealthy assassin in the shadows', 'Become a stealthy assassin and navigate through the shadows to complete deadly missions.', '50', '40', 'marvels-spider-man.j', 150, 0, 1, '2023-12-28 04:37:36'),
+(3, 1, 'Resident Evil Village', 'resident-evil-village', 'Procedurally generated world.', 'Explore a procedurally generated world, battling monsters and unlocking new abilities.', '40', '30', 'resident-evil-villag', 120, 0, 1, '2023-12-28 04:39:40'),
+(4, 2, 'Horizon Zero Dawn', 'horizon-zero-dawn', 'Thrilling adventure to uncover mysteries.', 'Embark on a thrilling adventure to uncover the mysteries of a lost civilization.', '65', '55', 'horizon-zero-dawn.jp', 90, 0, 1, '2023-12-28 04:43:30'),
+(5, 2, 'Ghost of Tsushima', 'ghost-of-tsushima', 'Journey through magical realms.', 'Journey through magical realms and solve puzzles to restore balance to the world.', '60', '50', 'ghost-of-tsushima.jp', 110, 0, 1, '2023-12-28 04:46:32'),
+(6, 2, 'Days Gone', 'days-gone', 'Search for hidden treasures.', 'Search for hidden treasures in exotic locations, but beware of traps and enemies.', '50', '40', 'days-gone.jpg', 130, 0, 1, '2023-12-28 04:47:34'),
+(7, 3, 'FIFA 22', 'fifa-22', 'The latest installment in the FIFA series.', 'Experience the excitement of football with realistic gameplay in FIFA 22.', '70', '60', 'fifa-22.jpg', 80, 0, 1, '2023-12-28 04:57:17'),
+(8, 3, 'NBA 2K22', 'nba-2k22', 'The premier basketball simulation game.', 'Play the most realistic basketball game with NBA 2K22.', '60', '50', 'nba-2k22.jpg', 120, 0, 1, '2023-12-28 04:58:11'),
+(9, 3, 'Gran Turismo Sport', 'gran-turismo-sport', 'A stunning racing experience.', 'Immerse yourself in the world of realistic racing with Gran Turismo Sport.', '60', '50', 'gran-turismo-sport.j', 120, 0, 1, '2023-12-28 05:00:36');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservations`
+-- Cấu trúc bảng cho bảng `reservations`
 --
 
 DROP TABLE IF EXISTS `reservations`;
 CREATE TABLE IF NOT EXISTS `reservations` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(191) NOT NULL,
-  `phone` varchar(191) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `phone` varchar(10) NOT NULL,
   `adult` int NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
-  `note` varchar(500) DEFAULT NULL,
+  `note` varchar(200) DEFAULT NULL,
   `status` tinyint NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
@@ -197,37 +197,36 @@ CREATE TABLE IF NOT EXISTS `reservations` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `phone` int NOT NULL,
-  `image` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'default.jpg',
+  `image` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'default.jpg',
   `verification_code` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `verify_status` tinyint DEFAULT '0' COMMENT '0=no, 1=yes',
-  `password` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `role_as` tinyint NOT NULL DEFAULT '0',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `image`, `verification_code`, `verify_status`, `password`, `role_as`, `created_at`) VALUES
-(22, 'Phạm Nguyệt Quỳnh', 'phamnguyetquynh0307@gmail.com', 989598472, 'default.jpg', '394481', 1, '$2y$10$J8tjpZRK.1C7KDU48Knq7OU5R4VkMJRDwWIxavrNJpIwZAZnRRXHq', 1, '2023-12-17 15:25:10'),
-(23, 'Nguyen Mai Huu Phuc', 'phucnguyenmaihuuuit@gmail.com', 888135231, 'default.jpg', '621009', 1, '$2y$10$cWYCLPh7q2am96G.96j4cuD2MhCLFiwaPol27utDsqLbAvljAkDF2', 0, '2023-12-25 14:48:49'),
-(24, 'Nguyen Mai Huu Phuc', '21522474@gm.uit.edu.vn', 888135231, 'default.jpg', '486162', 0, '$2y$10$KAI7aa4OO72niu4pAV9NiuhqAF716Cmg1o58SmjLeoWQ3waT0bJ.K', 0, '2023-12-25 16:17:38');
+(23, 'Nguyen Mai Huu Phuc', 'phucnguyenmaihuuuit@', 888135231, 'default.jpg', '621009', 1, '$2y$10$cWYCLPh7q2am9', 0, '2023-12-25 14:48:49'),
+(24, 'Nguyen Mai Huu Phuc', '21522474@gm.uit.edu.', 888135231, 'default.jpg', '486162', 0, '$2y$10$KAI7aa4OO72ni', 0, '2023-12-25 16:17:38');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wishlist`
+-- Cấu trúc bảng cho bảng `wishlist`
 --
 
 DROP TABLE IF EXISTS `wishlist`;
@@ -243,37 +242,37 @@ CREATE TABLE IF NOT EXISTS `wishlist` (
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `carts`
+-- Các ràng buộc cho bảng `carts`
 --
 ALTER TABLE `carts`
   ADD CONSTRAINT `carts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `carts_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 
 --
--- Constraints for table `orders`
+-- Các ràng buộc cho bảng `orders`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `order_items`
+-- Các ràng buộc cho bảng `order_items`
 --
 ALTER TABLE `order_items`
   ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `order_items_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `products`
+-- Các ràng buộc cho bảng `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `wishlist`
+-- Các ràng buộc cho bảng `wishlist`
 --
 ALTER TABLE `wishlist`
   ADD CONSTRAINT `wishlist_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),

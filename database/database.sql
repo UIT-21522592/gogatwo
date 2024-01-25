@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th1 25, 2024 lúc 08:48 PM
+-- Thời gian đã tạo: Th1 25, 2024 lúc 09:13 PM
 -- Phiên bản máy phục vụ: 8.0.31
 -- Phiên bản PHP: 8.1.13
 
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `id` int NOT NULL AUTO_INCREMENT,
   `first_name` varchar(10) NOT NULL,
   `last_name` varchar(10) NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `msg` varchar(300) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `tracking_no` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `user_id` int NOT NULL,
   `name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `phone` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `address` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `total_price` int NOT NULL,
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
 -- Đang đổ dữ liệu cho bảng `orders`
 --
 
-INSERT INTO `orders` (`id`, `tracking_no`, `user_id`, `name`, `email`, `phone`, `address`, `total_price`, `payment_mode`, `payment_id`, `status`, `comments`, `created_at`) VALUES
+INSERT INTO `orders` (`id`, `tracking_no`, `user_id`, `name`, `email`, `phone`, `address`, `total_price`, `payment_mode`, `payment_id`, `status`, `comment`, `created_at`) VALUES
 (85, 'hSjs7XnxdostjVx2lN67', 23, 'gh', 'd@e', '123', ' ,  , Ward An Khanh, District 2', 380000, 'COD', '', 0, '', '2023-12-26 10:54:06');
 
 -- --------------------------------------------------------
@@ -149,8 +149,8 @@ CREATE TABLE IF NOT EXISTS `products` (
   `slug` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `small_description` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `description` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `original_price` varchar(8) COLLATE utf8mb4_general_ci NOT NULL,
-  `selling_price` varchar(8) COLLATE utf8mb4_general_ci NOT NULL,
+  `original_price` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `selling_price` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `image` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `qty` int NOT NULL,
   `status` tinyint NOT NULL,
@@ -164,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- Đang đổ dữ liệu cho bảng `products`
 --
 
-INSERT INTO `products` (`id`, `category_id`, `product_name`, `slug`, `small_description`, `description`, `original_price`, `selling_price`, `image`, `qty`, `status`, `trending`, `created_at`) VALUES
+INSERT INTO `products` (`id`, `category_id`, `name`, `slug`, `small_description`, `description`, `original_price`, `selling_price`, `image`, `qty`, `status`, `trending`, `created_at`) VALUES
 (1, 1, 'God of War', 'god-of-war', 'Epic journey as a legendary warrior.', 'Embark on an epic journey as a legendary warrior battling mythical creatures.', '60', '50', 'god-of-war.jpg', 100, 0, 1, '2023-12-28 04:36:00'),
 (2, 1, 'Marvel\'s Spider-Man', 'marvels-spider-man', 'Stealthy assassin in the shadows', 'Become a stealthy assassin and navigate through the shadows to complete deadly missions.', '50', '40', 'marvels-spider-man.j', 150, 0, 1, '2023-12-28 04:37:36'),
 (3, 1, 'Resident Evil Village', 'resident-evil-village', 'Procedurally generated world.', 'Explore a procedurally generated world, battling monsters and unlocking new abilities.', '40', '30', 'resident-evil-villag', 120, 0, 1, '2023-12-28 04:39:40'),
@@ -204,7 +204,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `phone` int NOT NULL,
   `image` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'default.jpg',
   `verification_code` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -220,8 +220,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `image`, `verification_code`, `verify_status`, `password`, `role_as`, `created_at`) VALUES
-(23, 'Nguyen Mai Huu Phuc', 'phucnguyenmaihuuuit@', 888135231, 'default.jpg', '621009', 1, '$2y$10$cWYCLPh7q2am9', 0, '2023-12-25 14:48:49'),
-(24, 'Nguyen Mai Huu Phuc', '21522474@gm.uit.edu.', 888135231, 'default.jpg', '486162', 0, '$2y$10$KAI7aa4OO72ni', 0, '2023-12-25 16:17:38');
+(23, 'Nguyen Mai Huu Phuc', 'phucnguyenmaihuuuit@.com', 888135231, 'default.jpg', '621009', 1, '$2y$10$cWYCLPh7q2am9', 0, '2023-12-25 14:48:49'),
+(24, 'Nguyen Mai Huu Phuc', '21522474@gm.uit.edu.vn', 888135231, 'default.jpg', '486162', 0, '$2y$10$KAI7aa4OO72ni', 0, '2023-12-25 16:17:38');
 
 -- --------------------------------------------------------
 

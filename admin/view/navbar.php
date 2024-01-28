@@ -10,13 +10,13 @@
 	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+	<link rel="shortcut icon" href="img/icons/icon-48x48.png"/>
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
 	<title>AdminKit Demo - Bootstrap 5 Admin Template</title>
 
-	<link href="assets/css/app.css" rel="stylesheet">
+	<link href="../assets/css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -111,7 +111,7 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="../userprofile.php">
+						<a class="sidebar-link" href="userprofile.php">
               <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">User</span>
             </a>
 					</li>

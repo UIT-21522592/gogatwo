@@ -1,6 +1,5 @@
 <?php
-include("../functions/myFunctions.php");
-include('../middleware/adminMiddleware.php');
+include("../../functions/myFunctions.php");
 include("navbar.php");
 ?>
 
@@ -20,7 +19,7 @@ include("navbar.php");
                             <h4 class="font-weight-bold text-white mb-0">Edit Category</h4>
                         </div>
                         <div class="card-body">
-                            <form action="code.php" method="POST" enctype="multipart/form-data">
+                            <form action="../code.php" method="POST" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="name" class="form-label">Name</label>
@@ -85,6 +84,9 @@ include("navbar.php");
             } ?>
         </div>
     </div>
+    <?php
+    include("../../includes/footer.php");
+?>
 </div>
 
 

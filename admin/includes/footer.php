@@ -14,7 +14,7 @@
 <script src="assets/js/smooth-scrollbar.min.js"></script>
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="assets/js/custom.js"></script>
+<script src="../assets/js/custom.js"></script>
 <!-- alertify js -->
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <script>

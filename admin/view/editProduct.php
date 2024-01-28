@@ -1,6 +1,5 @@
 <?php
-include("../functions/myFunctions.php");
-include('../middleware/adminMiddleware.php');
+include("../../functions/myFunctions.php");
 //include_once("../includes/header.php");
 include("navbar.php");
 ?>
@@ -21,7 +20,7 @@ include("navbar.php");
                             <h4 class="font-weight-bold text-white mb-0">Edit Product</h4>
                         </div>
                         <div class="card-body">
-                            <form action="code.php" method="POST" enctype="multipart/form-data">
+                            <form action="../code.php" method="POST" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-md-12 mb-3">
                                         <label for="category_id" class="form-label">Select Category</label>
@@ -93,7 +92,7 @@ include("navbar.php");
                                             <label class="form-check-label" for="trendingCheckbox">Trending</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 mb-3">
+                                    <!-- <div class="col-md-12 mb-3">
                                         <label for="meta_title" class="form-label">Meta Title</label>
                                         <input type="text" required  name="meta_title" value="<?= $data['meta_title'] ?>" placeholder="Enter Meta Title" class="form-control">
                                     </div>
@@ -104,7 +103,7 @@ include("navbar.php");
                                     <div class="col-md-12 mb-3">
                                         <label for="meta_keywords" class="form-label">Meta Keywords</label>
                                         <textarea rows="3" required name="meta_keywords" placeholder="Enter Meta Keywords" class="form-control"><?= $data['meta_keywords'] ?></textarea>
-                                    </div>
+                                    </div> -->
                                     <!-- Add more form fields here with appropriate Bootstrap spacing classes -->
                                 </div>
                                 <div class="col-md-12">
@@ -124,10 +123,9 @@ include("navbar.php");
         </div>
     </div>
     <footer class = "footer">
-        <?php
-            include("../includes/footer.php")
-        ?>
-
+    <?php
+    include("../../includes/footer.php");
+?>
     </footer>
 </div>
 

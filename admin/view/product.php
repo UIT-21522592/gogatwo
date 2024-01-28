@@ -1,6 +1,6 @@
 <?php
-include("../functions/myFunctions.php");
-include('../middleware/adminMiddleware.php');
+include("../../functions/myFunctions.php");
+include('../../middleware/adminMiddleware.php');
 //include_once("../includes/header.php");
 include("navbar.php");
 ?>
@@ -48,7 +48,13 @@ include("navbar.php");
                                                                 <button type="submit" class="btn btn-danger btn-sm" name="delete_product_btn">Delete</button>
                                                             </form> -->
                                                     
-                                                        <button type="button" class="btn btn-sm btn-outline-warning delete_product_btn" value="<?= $item['id']; ?>">Delete</button>
+                                                        <!-- <button type="button" class="btn btn-sm btn-outline-warning delete_product_btn" value="<?= $item['id']; ?>">Delete</button> -->
+                                                        
+                                                        <a href="product.php?id=<?= $item['id']; ?>" class="btn btn-sm btn-danger delete_category_btn">
+                                                        Delete
+                                                        </a>
+
+
                                                     </td>
                                                 </tr>
                                         <?php
@@ -65,12 +71,53 @@ include("navbar.php");
                 </div>
             </div>
             <footer class = "footer">
-                <?php
-                    include("../includes/footer.php")
-                ?>
-
+            <?php
+                 include("../../includes/footer.php");
+            ?>
             </footer>
         </div>
 </div>
+<script>
+$(document).ready(function(){
+
+    $(".delete_category_btn").click(function(){
+
+    var cat_id = $(this).val();
+    
+    $.ajax({
+      url: "delete_category.php",
+      type: "POST",
+      data: { id: cat_id },
+      success: function(data){
+        if(data == 1){
+          alert("Category deleted successfully!");
+          location.reload(); 
+        }else{
+          alert("Error deleting category!");
+        }
+      }
+    });
+
+  });
+
+});
+</script>
+
+
+<?php
+
+include("../../config/dbconn.php");
+
+if(isset($_GET['id'])){
+
+  $cat_id = $_GET['id'];
+  $sql = "DELETE FROM `products` WHERE `id` = '".$cat_id."' ";
+  if(mysqli_query($conn, $sql)){
+    echo 1; 
+  }else{
+    echo 0;
+  }
+
+}
 
 

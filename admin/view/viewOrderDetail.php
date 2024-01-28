@@ -1,6 +1,5 @@
 <?php
-include("../functions/myFunctions.php");
-include('../middleware/adminMiddleware.php');
+include("../../functions/myFunctions.php");
 //include_once("../includes/header.php");
 include("navbar.php");
 if (isset($_GET['t'])) {
@@ -121,7 +120,7 @@ $data = mysqli_fetch_array($orderData);
 
                             <label class="fw-bold">Status</label>
                             <div class="mb-3">
-                                <form action="code.php" method="POST">
+                                <form action="../code.php" method="POST">
                                     <input type="hidden" name="tracking_no" value="<?= $data['tracking_no'] ?>">
                                     <select name="order_status" class="form-select">
                                         <option value="0" <?= $data['status'] == 0 ? "selected" : "" ?>>Pending</option>
@@ -139,7 +138,7 @@ $data = mysqli_fetch_array($orderData);
     </div>
     <footer class = "footer">
         <?php
-            include("../includes/footer.php")
+            include("../../includes/footer.php")
         ?>
 
     </footer>

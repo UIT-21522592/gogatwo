@@ -5,9 +5,6 @@ if (isset($_POST['add_category_btn'])) {
     $name = $_POST['name'];
     $slug = $_POST['slug'];
     $description = $_POST['description'];
-    $meta_title = $_POST['meta_title'];
-    $meta_description = $_POST['meta_description'];
-    $meta_keywords = $_POST['meta_keywords'];
     $status = isset($_POST['status']) ? '1' : '0';
     $popular = isset($_POST['popular']) ? '1' : '0';
 
@@ -16,22 +13,19 @@ if (isset($_POST['add_category_btn'])) {
     $image_ext = pathinfo($image, PATHINFO_EXTENSION);
     $filename = time() . '.' . $image_ext;
 
-    $category_query = "INSERT INTO categories (name, slug, description, meta_title, meta_description,meta_keywords, status,popular, image) VALUES ('$name', '$slug', '$description', '$meta_title', '$meta_description', '$meta_keywords', '$status', '$popular','$filename')";
+    $category_query = "INSERT INTO categories (name, slug, description, status,popular, image) VALUES ('$name', '$slug', '$description','$status', '$popular','$filename')";
     $category_query_run = mysqli_query($conn, $category_query);
     if ($category_query_run) {
         move_uploaded_file($_FILES['image']['tmp_name'], $path . '/' . $filename);
-        redirect("addCategory.php", "Category Added Successfully");
+        redirect("view/addCategory.php", "Category Added Successfully");
     } else {
-        redirect("addCategory.php", "Something went wrong");
+        redirect("view/addCategory.php", "Something went wrong");
     }
 } else if (isset($_POST['update_category_btn'])) {
     $category_id = $_POST['category_id'];
     $name = $_POST['name'];
     $slug = $_POST['slug'];
     $description = $_POST['description'];
-    $meta_title = $_POST['meta_title'];
-    $meta_description = $_POST['meta_description'];
-    $meta_keywords = $_POST['meta_keywords'];
     $status = isset($_POST['status']) ? '1' : '0';
     $popular = isset($_POST['popular']) ? '1' : '0';
 
@@ -45,7 +39,7 @@ if (isset($_POST['add_category_btn'])) {
         $update_filename = $old_image;
     }
     $path = "../uploads";
-    $update_query = "UPDATE categories SET name='$name', slug='$slug', description='$description', meta_title='$meta_title', meta_description='$meta_description', meta_keywords='$meta_keywords', status='$status', popular='$popular', image='$update_filename' WHERE id='$category_id'";
+    $update_query = "UPDATE categories SET name='$name', slug='$slug', description='$description', status='$status', popular='$popular', image='$update_filename' WHERE id='$category_id'";
     $update_query_run = mysqli_query($conn, $update_query);
 
     if ($update_query_run) {
@@ -56,9 +50,9 @@ if (isset($_POST['add_category_btn'])) {
                 unlink("../uploads/" . $old_image);
             }
         }
-        redirect("editCategory.php?id=$category_id", "Category updated successfully");
+        redirect("view/editCategory.php?id=$category_id", "Category updated successfully");
     } else {
-        redirect("editCategory.php?id=$category_id", "Something went wrong");
+        redirect("view/editCategory.php?id=$category_id", "Something went wrong");
     }
 } else if (isset($_POST['delete_category_btn'])) {
     // $category_id = mysqli_real_escape_string($conn, $_POST['category_id']);
@@ -87,10 +81,10 @@ if (isset($_POST['add_category_btn'])) {
             unlink("../uploads/" . $image);
         }
         echo 200;
-        redirect("category.php?", "Category deleted successfully");
+        redirect("view/category.php?", "Category deleted successfully");
     } else {
         echo 500;
-        redirect("category.php", "Something went wrong");
+        redirect("view/category.php", "Something went wrong");
     }
 } else if (isset($_POST['add_product_btn'])) {
     $category_id = $_POST['category_id'];
@@ -102,9 +96,6 @@ if (isset($_POST['add_category_btn'])) {
     $original_price = $_POST['original_price'];
     $selling_price = $_POST['selling_price'];
     $qty = $_POST['qty'];
-    $meta_title = $_POST['meta_title'];
-    $meta_description = $_POST['meta_description'];
-    $meta_keywords = $_POST['meta_keywords'];
     $status = isset($_POST['status']) ? '1' : '0';
     $trending = isset($_POST['trending']) ? '1' : '0';
 
@@ -118,15 +109,15 @@ if (isset($_POST['add_category_btn'])) {
         $name != "" && $slug != "" && $description != ""
         && $original_price != "" && $selling_price != "" && $qty != ""
     ) {
-        $product_query = "INSERT INTO products (category_id, name, slug, small_description, description, original_price, selling_price, qty, meta_title, meta_description, meta_keywords, status, trending, image ) VALUES 
-        ('$category_id', '$name', '$slug', '$small_description', '$description', '$original_price', '$selling_price', '$qty', '$meta_title', '$meta_description', '$meta_keywords', '$status', '$trending', '$filename')";
+        $product_query = "INSERT INTO products (category_id, name, slug, small_description, description, original_price, selling_price, qty, status, trending, image ) VALUES 
+        ('$category_id', '$name', '$slug', '$small_description', '$description', '$original_price', '$selling_price', '$qty', '$status', '$trending', '$filename')";
 
         $product_query_run = mysqli_query($conn, $product_query);
         if ($product_query_run) {
             move_uploaded_file($_FILES['image']['tmp_name'], $path . '/' . $filename);
-            redirect("addProduct.php", "Product Added Successfully");
+            redirect("view/addProduct.php", "Product Added Successfully");
         } else {
-            redirect("addProduct.php", "Something went wrong");
+            redirect("view/addProduct.php", "Something went wrong");
         }
     } else {
         redirect("addProduct.php", "All fields are mandatory");
@@ -142,9 +133,6 @@ if (isset($_POST['add_category_btn'])) {
     $original_price = $_POST['original_price'];
     $selling_price = $_POST['selling_price'];
     $qty = $_POST['qty'];
-    $meta_title = $_POST['meta_title'];
-    $meta_description = $_POST['meta_description'];
-    $meta_keywords = $_POST['meta_keywords'];
     $status = isset($_POST['status']) ? '1' : '0';
     $trending = isset($_POST['trending']) ? '1' : '0';
     $path = "../uploads";
@@ -160,7 +148,6 @@ if (isset($_POST['add_category_btn'])) {
     }
     $update_product_query = "UPDATE products SET name='$name',slug='$slug',small_description='$small_description',description='$description',
      original_price='$original_price', selling_price='$selling_price', qty='$qty', 
-     meta_title='$meta_title',meta_description='$meta_description', meta_keywords='$meta_keywords',
      status='$status', trending='$trending', image='$update_filename' WHERE id='$product_id'";
     $update_product_query_run = mysqli_query($conn, $update_product_query);
 
@@ -172,9 +159,9 @@ if (isset($_POST['add_category_btn'])) {
                 unlink("../uploads/" . $old_image);
             }
         }
-        redirect("editProduct.php?id=$product_id", "Product updated successfully");
+        redirect("view/editProduct.php?id=$product_id", "Product updated successfully");
     } else {
-        redirect("editProduct.php?id=$product_id", "Something went wrong");
+        redirect("view/editProduct.php?id=$product_id", "Something went wrong");
     }
 } else if (isset($_POST['delete_product_btn'])) {
     $product_id = mysqli_real_escape_string($conn, $_POST['product_id']);
@@ -205,7 +192,7 @@ if (isset($_POST['add_category_btn'])) {
 
     $update_order_query = "UPDATE orders SET status='$order_status' WHERE tracking_no='$track_no'";
     $update_order_query_run = mysqli_query($conn, $update_order_query);
-    redirect("viewOrderDetail.php?t=$track_no", "Order status updated successfully");
+    redirect("view/viewOrderDetail.php?t=$track_no", "Order status updated successfully");
 
 } else if (isset($_POST['update_reservation_btn'])) {
     $id = $_POST['id'];

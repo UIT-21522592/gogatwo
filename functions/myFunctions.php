@@ -3,15 +3,15 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-include('../config/dbconn.php');
+include("C:/xampp/htdocs/WorkspaceWeb/config/dbconn.php");
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require_once('../PHPMailer-master/src/Exception.php');
-require_once('../PHPMailer-master/src/PHPMailer.php');
-require_once('../PHPMailer-master/src/SMTP.php');
+require_once('C:/xampp/htdocs/WorkspaceWeb/PHPMailer-master/src/Exception.php');
+require_once('C:/xampp/htdocs/WorkspaceWeb/PHPMailer-master/src/PHPMailer.php');
+require_once('C:/xampp/htdocs/WorkspaceWeb/PHPMailer-master/src/SMTP.php');
 
 // use Prepared Statements to prevent sql injection
 function getAll($table)

@@ -1,6 +1,5 @@
 <?php
-include("../functions/myFunctions.php");
-include('../middleware/adminMiddleware.php');
+include("../../functions/myFunctions.php");
 //include_once("../includes/header.php");
 include("navbar.php");
 ?>
@@ -71,8 +70,9 @@ include("navbar.php");
             </div>
         </div>
     </div>
-    
+    <?php
+    include("../../includes/footer.php");
+?>
 </div>
 
-</div>
 

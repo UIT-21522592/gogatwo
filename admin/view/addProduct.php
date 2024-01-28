@@ -1,11 +1,10 @@
 <?php
-include("../functions/myFunctions.php");
-include('../middleware/adminMiddleware.php');
+include("../../functions/myFunctions.php");
 //include_once("../includes/header.php");
 include("navbar.php");
 ?>
-
-<div class="container mt-4">
+<div class="main">
+    <div class="container mt-4">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -13,7 +12,7 @@ include("navbar.php");
                     <h4 class="font-weight-bold text-white mb-0">Add Product</h4>
                 </div>
                 <div class="card-body">
-                    <form action="code.php" method="POST" enctype="multipart/form-data">
+                    <form action="../code.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-12 mb-3">
                                 <label for="category_id" class="mb-0">Select Category</label>
@@ -80,7 +79,7 @@ include("navbar.php");
                                 </div>
                             </div>
 
-                            <div class="col-md-12 mb-3">
+                            <!-- <div class="col-md-12 mb-3">
                                 <label for="meta_title" class="mb-0">Meta Title</label>
                                 <input type="text" required name="meta_title" placeholder="Enter Meta Title" class="form-control mb-2">
                             </div>
@@ -91,7 +90,7 @@ include("navbar.php");
                             <div class="col-md-12 mb-3">
                                 <label for="meta_keywords" class="mb-0">Meta Keywords</label>
                                 <textarea rows="3" required name="meta_keywords" placeholder="Enter Meta Keywords" class="form-control mb-2"></textarea>
-                            </div>
+                            </div> -->
 
                             <div class="col-md-12">
                                 <button type="submit" class="btn  btn-primary" name="add_product_btn">Save</button>
@@ -102,6 +101,11 @@ include("navbar.php");
             </div>
         </div>
     </div>
+    <?php
+    include("../../includes/footer.php");
+    ?>
 </div>
 
 
+
+</div>

@@ -1,5 +1,4 @@
 <?php
-include('../middleware/adminMiddleware.php');
 //include_once("../includes/header.php");
 include("navbar.php");
 $host="localhost";
@@ -276,6 +275,8 @@ function getMessages()
             </div>
         </div>
     </div>
-
+    <?php
+    include("../../includes/footer.php");
+?>
 </div>
 
